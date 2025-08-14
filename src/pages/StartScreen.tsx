@@ -4,8 +4,6 @@ import { Play } from "lucide-react";
 
 interface StartScreenProps {
     onStart: () => void;
-    musicOn: boolean;
-    setMusicOn: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export default function StartScreen({ onStart }: StartScreenProps) {

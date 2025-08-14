@@ -5,12 +5,10 @@ import Home from "./pages/Home";
 
 export default function App() {
     const [started, setStarted] = useState(false);
-    const [musicOn, setMusicOn] = useState(false);
 
     useEffect(() => {
         const onKey = (e: KeyboardEvent) => {
             if (e.key === "Enter" || e.key === " ") {
-                setMusicOn(false);
                 setStarted(true);
             }
         };
@@ -26,17 +24,10 @@ export default function App() {
                         key="start"
                         onStart={() => {
                             setStarted(true);
-                            setMusicOn(true);
                         }}
-                        musicOn={musicOn}
-                        setMusicOn={setMusicOn}
                     />
                 ) : (
-                    <Home
-                        key="main"
-                        musicOn={musicOn}
-                        setMusicOn={setMusicOn}
-                    />
+                    <Home key="main" />
                 )}
             </AnimatePresence>
         </div>

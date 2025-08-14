@@ -1,12 +1,10 @@
 import { Gamepad2 } from "lucide-react";
 import MusicButton from "./MusicButton";
+import { useState } from "react";
 
-interface TopBarProps {
-    musicOn: boolean;
-    setMusicOn: React.Dispatch<React.SetStateAction<boolean>>;
-}
+export default function TopBar() {
+    const [musicOn, setMusicOn] = useState(true);
 
-export default function TopBar({ musicOn, setMusicOn }: TopBarProps) {
     return (
         <div className="sticky top-0 z-20 backdrop-blur bg-retro-bg/60 border-b border-white/10">
             <div className="max-w-6xl mx-auto px-4 py-3 flex items-center gap-4">

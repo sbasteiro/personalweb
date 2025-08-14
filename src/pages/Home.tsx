@@ -5,15 +5,11 @@ import About from "../components/About";
 import Footer from "../components/Footer";
 import Contact from "../components/Contact";
 
-interface HomeProps {
-    musicOn: boolean;
-    setMusicOn: React.Dispatch<React.SetStateAction<boolean>>;
-}
+export default function Home() {
 
-export default function Home({ musicOn, setMusicOn }: HomeProps) {
     return (
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="min-h-screen text-retro-ink">
-            <TopBar musicOn={musicOn} setMusicOn={setMusicOn} />
+            <TopBar />
             <header className="max-w-6xl mx-auto px-4 pt-10 md:pt-16">
                 <div className="rounded-2xl pixel-border p-6 md:p-8 bg-white/5">
                     <div className="flex items-center gap-4">
