@@ -1,35 +1,28 @@
-import { useEffect, useState } from "react";
-import { AnimatePresence } from "framer-motion";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import StartScreen from "./pages/StartScreen";
 import Home from "./pages/Home";
+import { useEffect } from "react";
 
 export default function App() {
-    const [started, setStarted] = useState(false);
-
     useEffect(() => {
-        const onKey = (e: KeyboardEvent) => {
-            if (e.key === "Enter" || e.key === " ") {
-                setStarted(true);
+        const onKeyDown = (e: KeyboardEvent) => {
+            if (e.key === " " || e.key === "Enter") {
+                e.preventDefault();
             }
         };
-        window.addEventListener('keydown', onKey);
-        return () => window.removeEventListener('keydown', onKey);
+
+        window.addEventListener("keydown", onKeyDown);
+
+        return () => window.removeEventListener("keydown", onKeyDown);
     }, []);
 
     return (
-        <div className="crt min-h-screen">
-            <AnimatePresence mode="wait">
-                {!started ? (
-                    <StartScreen
-                        key="start"
-                        onStart={() => {
-                            setStarted(true);
-                        }}
-                    />
-                ) : (
-                    <Home key="main" />
-                )}
-            </AnimatePresence>
-        </div>
+        <Router>
+            <Routes>
+                <Route path="/" element={<StartScreen />} />
+                <Route path="/home" element={<Home />} />
+                <Route path="*" element={<Navigate to="/" />} />
+            </Routes>
+        </Router>
     );
 }

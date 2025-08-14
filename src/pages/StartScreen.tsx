@@ -1,19 +1,31 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Play } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
-interface StartScreenProps {
-    onStart: () => void;
-}
-
-export default function StartScreen({ onStart }: StartScreenProps) {
+export default function StartScreen() {
+    const navigate = useNavigate();
     const [blinking, setBlinking] = useState(true);
 
     useEffect(() => {
         const id = setInterval(() => setBlinking((b) => !b), 1200);
-        return () => clearInterval(id);
-    }, []);
 
+        const onKeyDown = (e: KeyboardEvent) => {
+            if (e.key === "Enter" || e.key === " ") {
+                navigate("/home");
+            }
+        };
+        window.addEventListener("keydown", onKeyDown);
+
+        return () => {
+            clearInterval(id);
+            window.removeEventListener("keydown", onKeyDown);
+        };
+    }, [navigate]);
+
+    const handleStart = () => {
+        navigate("/home");
+    };
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -47,7 +59,7 @@ export default function StartScreen({ onStart }: StartScreenProps) {
                     </p>
                     <div className="mt-6 flex items-center justify-center gap-3">
                         <button
-                            onClick={onStart}
+                            onClick={handleStart}
                             className="font-pixel text-xs px-3 py-1 rounded-2xl border border-retro-accent hover:bg-retro-accent hover:text-retro-bg transition flex items-center"
                         >
                             <Play className="mr-2 h-4 w-4" />START
