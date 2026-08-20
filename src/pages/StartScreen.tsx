@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function StartScreen() {
     const navigate = useNavigate();
+
     const [blinking, setBlinking] = useState(true);
 
     useEffect(() => {
