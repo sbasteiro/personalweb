@@ -5,7 +5,7 @@ export default function About() {
                 <div className="md:col-span-2">
                     <h2 className="font-pixel text-sm text-retro-accent mb-4">SER YO</h2>
                     <p className="font-sans text-retro-ink/85 leading-relaxed space-y-3">
-                        👩‍💻 <strong>Backend Developer</strong> con 9+ años convirtiendo ideas, problemas y cafés ☕ en aplicaciones web, APIs y sistemas que realmente funcionan.
+                        👩‍💻 <strong>Backend Developer</strong> con 9+ años convirtiendo ideas, problemas en aplicaciones web, APIs y sistemas que realmente funcionan.
                         <br /><br />
                         🛠️ Mi zona de confort: <strong>PHP, Laravel, Symfony, CodeIgniter y Zend Framework</strong>, trabajando con bases de datos, integraciones y todo lo que haga falta para que el backend no explote 💥.
                         <br /><br />
