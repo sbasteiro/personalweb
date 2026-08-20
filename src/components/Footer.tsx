@@ -18,7 +18,7 @@ export default function Footer() {
                         <Mail />
                     </a>
                 </div>
-                <p className="font-pixel text-[10px] text-retro-ink/70">© 2025 SABRILOCALHOST — INSERT COIN</p>
+                <p className="font-pixel text-[10px] text-retro-ink/70">© {new Date().getFullYear()} SABRILOCALHOST — INSERT COIN</p>
             </div>
         </footer>
     );
