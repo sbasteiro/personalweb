@@ -23,7 +23,7 @@ export default function Home() {
                         <div>
                             <h1 className="font-pixel text-base sm:text-lg">SABRINA BASTEIRO</h1>
                             <p className="font-sans text-sm text-retro-ink/80">
-                                👩‍💻 Backend Developer • 🎮 Game Developer • ☕ Professional Bug Hunter
+                                👩‍💻 Backend Developer • 🎮 Game Developer • 🪲 Professional Bug Hunter
                             </p>
                         </div>
                     </div>

@@ -50,7 +50,7 @@ export default function StartScreen() {
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ delay: 0.15, duration: 0.6 }}
                     >
-                         👩‍💻 Backend Developer • 🎮 Game Developer • ☕ Professional Bug Hunter
+                         👩‍💻 Backend Developer • 🎮 Game Developer • 🪲 Professional Bug Hunter
                     </motion.p>
                 </div>
 
