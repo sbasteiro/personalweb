@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import StartScreen from "./pages/StartScreen";
 import Home from "./pages/Home";
 import { useEffect } from "react";
