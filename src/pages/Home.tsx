@@ -4,6 +4,7 @@ import Projects from "../components/Projects";
 import About from "../components/About";
 import Footer from "../components/Footer";
 import Contact from "../components/Contact";
+import { Link } from "react-router-dom"
 
 export default function Home() {
 
@@ -13,9 +14,12 @@ export default function Home() {
             <header className="max-w-6xl mx-auto px-4 pt-10 md:pt-16">
                 <div className="rounded-2xl pixel-border p-6 md:p-8 bg-white/5">
                     <div className="flex items-center gap-4">
+                        <Link to="/" className="flex items-center gap-2 text-retro-ink"
+                        >
                         <div className="h-20 w-20 rounded-full shadow-[0_0_20px_var(--retro-shadow)] grid place-content-center">
                             <img src="./profileImg.jpg" alt="profile" className="rounded-full" />
                         </div>
+                        </Link>
                         <div>
                             <h1 className="font-pixel text-base sm:text-lg">SABRINA BASTEIRO</h1>
                             <p className="font-sans text-sm text-retro-ink/80">
