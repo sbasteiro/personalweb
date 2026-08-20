@@ -1,5 +1,13 @@
 export const projects = [
     {
+        title: "MegaLove",
+        role: "Dev / Game Designer",
+        year: "",
+        tags: ["Godot", "HTML5", "2D"],
+        cover: "https://img.itch.zone/aW1nLzIzNjI4MzE0LnBuZw==/original/bu0dQW.png",
+        url: "https://sbasteiro.itch.io/megalove",
+    },
+    {
         title: "Florecer a la fuerza",
         role: "Dev / Game Designer",
         year: "2025",

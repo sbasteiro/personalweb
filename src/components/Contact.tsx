@@ -9,10 +9,12 @@ export default function ContactForm() {
     const [message, setMessage] = useState("");
     const [sent, setSent] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState("");
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
+        setError("");
 
         try {
             await emailjs.send(
@@ -29,8 +31,13 @@ export default function ContactForm() {
 
             setTimeout(() => setSent(false), 3000);
         } catch (err) {
+            const detail =
+                typeof err === "object" && err !== null && "text" in err
+                    ? String(err.text)
+                    : "No se pudo enviar el mensaje. Intentá de nuevo más tarde.";
+
             console.error("Error enviando email:", err);
-            alert("Error enviando el mensaje, intenta de nuevo.");
+            setError(detail);
         } finally {
             setLoading(false);
         }
@@ -92,6 +99,12 @@ export default function ContactForm() {
                 {sent && (
                     <p className="text-green-400 font-pixel text-sm text-center animate-fade">
                         ¡Mensaje enviado!
+                    </p>
+                )}
+
+                {error && (
+                    <p role="alert" className="text-red-300 font-sans text-sm text-center">
+                        {error}
                     </p>
                 )}
             </motion.form>

@@ -26,7 +26,9 @@ export default function ProjectCard({ title, role, year, tags, url, cover }: Pro
             <div className="min-w-0">
                 <h3 className="font-pixel text-sm text-retro-accent-2 mb-1">{title}</h3>
 
-                <p className="font-sans text-sm text-retro-ink/80">{role} • {year}</p>
+                <p className="font-sans text-sm text-retro-ink/80">
+                    {year ? `${role} • ${year}` : role}
+                </p>
                 <div className="mt-3 flex flex-wrap gap-2">
                     {tags.map((t) => (
                         <span

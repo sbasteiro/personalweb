@@ -1,6 +1,7 @@
 import { Gamepad2 } from "lucide-react";
 import MusicButton from "./MusicButton";
 import { useState } from "react";
+import { Link } from "react-router-dom"
 
 export default function TopBar() {
     const [musicOn, setMusicOn] = useState(true);
@@ -9,7 +10,10 @@ export default function TopBar() {
         <div className="sticky top-0 z-20 backdrop-blur bg-retro-bg/60 border-b border-white/10">
             <div className="max-w-6xl mx-auto px-4 py-3 flex items-center gap-4">
                 <div className="flex items-center gap-2 text-retro-ink">
-                    <Gamepad2 className="h-5 w-5" />
+                    <Link to="/" className="flex items-center gap-2 text-retro-ink"
+                    >
+                        <Gamepad2 className="h-5 w-5" />
+                    </Link>
                 </div>
                 <nav className="ml-auto flex items-center gap-2 sm:gap-3">
                     <a href="#projects" className="font-pixel text-[10px] sm:text-xs opacity-80 hover:opacity-100">PROJECTS</a>
