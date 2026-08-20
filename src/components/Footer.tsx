@@ -1,4 +1,4 @@
-import { Gamepad2, Linkedin, Mail } from "lucide-react";
+import { Gamepad2, Linkedin, Mail, Github } from "lucide-react";
 
 export default function Footer() {
     return (
@@ -10,6 +10,9 @@ export default function Footer() {
                     </a>
                     <a href="https://www.linkedin.com/in/sabrina-basteiro/" target="_blank" rel="noreferrer" className="rounded-xl p-2 bg-white/5">
                         <Linkedin />
+                    </a>
+                    <a href="https://github.com/sbasteiro" target="_blank" rel="noreferrer" className="rounded-xl p-2 bg-white/5">
+                        <Github />
                     </a>
                     <a href="mailto:sabrilocalhost@gmail.com?subject=Contacto%20desde%20Portfolio&body=Hola%2C%20Sabrina!%20Me%20gustar%C3%ADa%20que%20trabajemos%20juntos." className="rounded-xl p-2 bg-white/5">
                         <Mail />
